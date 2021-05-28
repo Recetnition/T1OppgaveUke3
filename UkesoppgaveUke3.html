@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 1 Puzzle</title>
+    <style>
+      
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: gray;
+        align-items: center;
+      }
+      .header {
+        padding: 35px;
+        text-align: center;
+        background-color: darkslategray;
+        color: white;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+        text-shadow: 2px 0 0 #000, -2px 0 0#000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+      }
+      .puzzle {
+        padding-top: 5px;
+        display: table;
+        margin: auto;
+      }
+      footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        background-color: darkslategray;
+        color: white;
+        font-size: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
+        text-shadow: 2px 0 0 #000, -2px 0 0#000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        position: absolute;
+        bottom:0;
+        width: 100vW;
+      }
+#div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9 {
+    display: flex;
+    float: left;
+    width: 150px;
+    height: 150px; 
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid black;
+}
+.tilvenstre {
+    clear: left;
+}
+.tilhøgre {
+    clear: right;
+}
+img {
+  width: 150px;
+  height: 150px;
+}
+#div10, #div11, #div12, #div13, #div14, #div15, #div16, #div17, #div18 {
+  display: flex;
+    float: right;
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid black;
+}
+
+    </style>
+    <script>
+    
+// // // // // //    let offset = [0, 0]
+
+// // // // // //    function allowDrop(ev) {
+// // // // // //   var t = ev.target;
+// // // // // //   while (t !== null && !t.classList.contains("target")) {
+// // // // // //     t = t.parentNode;
+// // // // // //   }
+// // // // // //   if (t && t.childNodes.length > 0) {
+// // // // // //     return false;
+// // // // // //   }
+// // // // // //   ev.preventDefault()
+// // // // // // }
+// // // // // //     function drag(ev) {
+// // // // // //     ev.dataTransfer.setData('dragID', ev.target.id)
+// // // // // //     offset = [
+// // // // // //         ev.target.offsetLeft - ev.clientX,
+// // // // // //         ev.target.offsetTop - ev.clientY
+// // // // // //     ]
+// // // // // // }
+
+// // // // // //     function drop(ev) {
+// // // // // //     ev.preventDefault()
+// // // // // //     const data = ev.dataTransfer.getData('dragID')
+// // // // // //     ev.target.appendChild(document.getElementById(data))
+// // // // // // }
+
+
+
+
+// function drop(ev) {
+ 
+//   ev.preventDefault();
+//   var data = ev.dataTransfer.getData("text");
+//   if (document.getElementById(ev.target.id).innerHTML != "") return;
+//   ev.target.appendChild(document.getElementById(data));
+  
+// }
+function allowDrop(ev) {
+  ev.preventDefault();
+  
+  // console.log(ev,"dette er ev")
+}
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) 
+{
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var divDrag = document.getElementById(data);
+    var divDragIDNumb = document.getElementById(data).id.slice(-1);
+    var divNumb = ev.target.id.slice(-1);
+    var divDrop = ev.target;
+    
+    if (divNumb == divDragIDNumb && divDrop.childNodes.length == 0 ) { // er riktig brikke og er ikke noen brikker i feltet fra før. 
+        //riktig brikke på riktig plass
+            ev.target.appendChild(divDrag);
+            ev.target.setAttribute("ondrop", ""); //slår av on drop på pusslebitholder
+            divDrag.setAttribute("draggable", "false");
+            divDrag.setAttribute("ondragstart", "");
+            
+    }
+   
+}
+
+    </script>
+</head>
+<body>
+  <div class="header">
+    <h1> Team 1 Ukesoppgave</h1>
+
+  </div>
+  <section class="puzzle">  
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div class="tilvenstre" id="div4"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="tilvenstre" id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  </section>
+  <article class="puzzle">  
+    <img src="row-1-col-1.png" draggable="true" ondragstart="drag(event)" id="drag1" /> 
+    <img src="row-2-col-3.png" draggable="true" ondragstart="drag(event)" id="drag6" />
+    <img src="row-3-col-3.png" draggable="true" ondragstart="drag(event)" id="drag9" /> 
+    <img src="row-1-col-2.png" draggable="true" ondragstart="drag(event)" id="drag2" /> 
+    <img src="row-2-col-2.png" draggable="true" ondragstart="drag(event)" id="drag5" /> 
+    <img src="row-3-col-1.png" draggable="true" ondragstart="drag(event)" id="drag7" />
+    <img src="row-2-col-1.png" draggable="true" ondragstart="drag(event)" id="drag4" /> 
+    <img src="row-3-col-2.png" draggable="true" ondragstart="drag(event)" id="drag8" /> 
+    <img src="row-1-col-3.png" draggable="true" ondragstart="drag(event)" id="drag3" /> 
+  </article>
+    <!-- <div ><img src="row-2-col-1.png" draggable="true" ondragstart="drag(event)" id="drag10"/></div>
+    <div ><img src="row-2-col-2.png" draggable="true" ondragstart="drag(event)" id="drag11"/></div>
+    <div ><img src="row-2-col-3.png" draggable="true" ondragstart="drag(event)" id="drag12" /></div> --> 
+<footer>
+  Anders - Daniel A - Daniel N - Jostein - Stefanos
+</footer>
+
+</body>
+</html>

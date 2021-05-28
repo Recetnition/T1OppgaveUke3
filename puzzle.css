@@ -1,0 +1,126 @@
+body {
+  background-color: #333;
+  color:white;
+}
+
+.info {
+  position:relative;
+  font-family:Arial;
+  margin:10px;
+  text-align:center;
+  border-radius:5px;
+  font-size:15px;
+
+}
+
+#title {
+
+  font-size:50px;
+  color:red;
+}
+
+#rest2 {
+  font-size:13px;
+}
+
+#div div {
+  position:relative;
+  height: 200px;
+  width: 200px;
+  border: 1px solid gray;
+  display: inline-flex;
+  margin: 0px;
+  padding: 0px;
+  
+}
+
+#div {
+  flex-flow: column;
+  width:614px;
+  height:614px;
+  background:black;
+  border:1px solid black;
+  
+  float:right;
+  margin:auto;
+  position:relative;
+
+}
+
+#images {
+  position: absolute;
+  width: 50%
+}
+
+
+
+#drag4,
+#drag5,
+#drag6,
+#drag7,
+#drag8,
+#drag9,
+#drag10,
+#drag11,
+#drag12 {
+  height: 200px;
+  width: 200px;
+
+  display: inline-block;
+}
+
+#drag4 {
+
+
+background:  url('row-1-col-1.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag5 {
+  background:  url('row-1-col-2.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag6 {
+   background:  url('row-1-col-3.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag7 {
+   background:  url('row-2-col-1.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag8 {
+  background:  url('row-2-col-2.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag9 {
+  background:  url('row-2-col-3.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag10 {
+  background:  url('row-3-col-1.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag11 {
+  background:  url('row-3-col-2.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
+
+#drag12 {
+  background:  url('row-3-col-3.png'); 
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+}
